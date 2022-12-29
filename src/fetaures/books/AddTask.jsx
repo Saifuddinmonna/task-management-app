@@ -7,13 +7,13 @@ import { v4 as uuidv4 } from "uuid";
 
 const AddTask = () => {
 	const [title, setTitle] = useState("");
-	const [author, setAuthor] = useState("");
+	const [Descriiption, setAuthor] = useState("");
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const task = { id: uuidv4(), title, author };
+		const task = { id: uuidv4(), title, Descriiption };
 		dispatch(AddTask(task));
 		navigate("/show-books", { replace: true });
 	};
@@ -33,12 +33,12 @@ const AddTask = () => {
 					/>
 				</div>
 				<div className="form-field">
-					<label htmlFor="author">Author: </label>
+					<label htmlFor="Descriiption">Description: </label>
 					<input
 						type="text"
-						id="author"
-						name="author"
-						value={author}
+						id="Descriiption"
+						name="Descriiption"
+						value={Descriiption}
 						onChange={(e) => setAuthor(e.target.value)}
 						required
 					/>
